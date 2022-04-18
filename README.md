@@ -19,7 +19,7 @@
 
 
 
-## Key Features
+## :computer: Key Features
 
 * Registration of 2 players
   - Input players name
@@ -31,7 +31,7 @@
 * Animation of winner player
 
 
-## How To Run
+## :rocket: How To Run
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
@@ -52,7 +52,7 @@ $ npm run dev
 The application will be running on http://localhost:3000.
 
 
-## Technologies Used
+## :book: Technologies Used
 
 This software uses the following open source packages:
 
@@ -64,7 +64,7 @@ This software uses the following open source packages:
 
 
 
-## License
+## :memo: License
 
 MIT
 
