@@ -19,7 +19,7 @@ const PlayerCard = ({ player }: Props) => {
           <>
             <h1 className="player-title">{player.name}</h1>
             <span>Score: </span>
-            {[...Array(player.wins)].map((_, idx) => (
+            {[...Array(player.score)].map((_, idx) => (
               <TrophyOutlined key={idx} />
             ))}
           </>
