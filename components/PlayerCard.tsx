@@ -10,9 +10,7 @@ type Props = {
 };
 
 const PlayerCard = ({ player }: Props) => {
-  const { currPlayerTrun, initialPlayerTurn, players } = useSelector(
-    (state: RootState) => state
-  );
+  const { currPlayerTrun, players } = useSelector((state: RootState) => state);
 
   return (
     <div id={player.name}>

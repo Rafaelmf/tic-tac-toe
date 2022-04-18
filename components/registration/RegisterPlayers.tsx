@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 
-import anime from "animejs";
-import { Button, Form, Input } from "antd";
-import { CirclePicker } from "react-color";
+import { Button, Form } from "antd";
 import { AuditOutlined, RocketOutlined } from "@ant-design/icons";
-import { previousDay } from "date-fns";
 import { useDispatch } from "react-redux";
-import { registerPlayers } from "../store/actions";
+import { registerPlayers } from "../../store/actions";
 
-import useAnimeLetters from "../hooks/useAnimeLetters";
+import useAnimeLetters from "../../hooks/useAnimeLetters";
 import PlayerFormInputs from "./PlayerFormInputs";
 
 const RegisterPlayers = () => {

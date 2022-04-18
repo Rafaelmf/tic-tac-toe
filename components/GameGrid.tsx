@@ -1,4 +1,4 @@
-import { Button, Card } from "antd";
+import { Card } from "antd";
 
 import { RootState } from "../store/store";
 import { useSelector, useDispatch } from "react-redux";

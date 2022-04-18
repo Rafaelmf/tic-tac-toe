@@ -1,12 +1,5 @@
-import { useEffect, useState } from "react";
-
-import anime from "animejs";
-import { Button, Form, Input } from "antd";
+import { Form, Input } from "antd";
 import { CirclePicker } from "react-color";
-import { AuditOutlined, RocketOutlined } from "@ant-design/icons";
-import { previousDay } from "date-fns";
-import { useDispatch } from "react-redux";
-import { registerPlayers } from "../store/actions";
 
 type setStateColor = (oldState: Props["colorHex"]) => Props["colorHex"];
 
