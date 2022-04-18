@@ -29,6 +29,7 @@
   - Display of Score (amount of wins withing that session)
   - Display and animation of players turn
 * Animation of winner player
+* <a href="https://draculatheme.com/contribute">Dracula color scheme</a>
 
 
 ## :rocket: How To Run
