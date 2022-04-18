@@ -32,7 +32,7 @@ export default function App() {
 
   useEffect(() => {
     animePlayerTurnn();
-  }, [currPlayerTrun]);
+  }, [currPlayerTrun, draw, endGame]);
 
   const playAgain = () => (
     <>

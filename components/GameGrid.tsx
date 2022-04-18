@@ -2,11 +2,7 @@ import { Button, Card } from "antd";
 
 import { RootState } from "../store/store";
 import { useSelector, useDispatch } from "react-redux";
-import { changePlayerScore, clickOnGrid } from "../store/actions";
-
-import anime from "animejs";
-import { useEffect, useState } from "react";
-import useAnimeLetters from "../hooks/useAnimeLetters";
+import { clickOnGrid } from "../store/actions";
 
 const GameGrid = () => {
   const { gameGrid, players } = useSelector((state: RootState) => state);
@@ -15,7 +11,7 @@ const GameGrid = () => {
   const endGame = players[0].winner || players[1].winner;
 
   const getClassNameGridCell = (rowIdx: number, colIdx: number) => {
-    let cellClass = "";
+    let cellClass = "card-grid";
     if (colIdx < 2) cellClass = cellClass.concat(" border-right");
     if (rowIdx < 2) cellClass = cellClass.concat(" border-bottom");
     if (endGame) cellClass = cellClass.concat(" end-game");
@@ -39,12 +35,6 @@ const GameGrid = () => {
               key={rowIdx + colIdx + col}
               onClick={() => handleClickOnGrid(col, rowIdx, colIdx)}
               className={getClassNameGridCell(rowIdx, colIdx)}
-              style={{
-                width: "33%",
-                height: "10em",
-                textAlign: "center",
-                boxShadow: "none",
-              }}
             >
               <p
                 style={{

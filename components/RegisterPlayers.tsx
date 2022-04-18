@@ -9,12 +9,13 @@ import { useDispatch } from "react-redux";
 import { registerPlayers } from "../store/actions";
 
 import useAnimeLetters from "../hooks/useAnimeLetters";
+import PlayerFormInputs from "./PlayerFormInputs";
 
 const RegisterPlayers = () => {
   const [formVisible, setFormVisible] = useState(false);
   const [colorHex, setColorHex] = useState({
-    left: "#00000000",
-    right: "#00000000",
+    Left: "#00000000",
+    Right: "#00000000",
   });
   const dispatch = useDispatch();
   const { animeTicTacToe } = useAnimeLetters();
@@ -23,15 +24,6 @@ const RegisterPlayers = () => {
     if (formVisible) return;
     animeTicTacToe();
   }, [formVisible]);
-
-  const handleChangeColor = (
-    color: { hex: string },
-    side: "left" | "right"
-  ) => {
-    setColorHex((oldState) => {
-      return { ...oldState, [side]: color.hex };
-    });
-  };
 
   const finishForm = (values) => {
     dispatch(
@@ -71,68 +63,16 @@ const RegisterPlayers = () => {
           className="players-form"
           layout="vertical"
         >
-          <div>
-            <p
-              style={{
-                textShadow: `2px 2px 0px ${colorHex.left}`,
-                fontSize: "4rem",
-              }}
-              className="grid-cell"
-            >
-              X
-            </p>
-            <Form.Item
-              label="Player name:"
-              name="nameLeft"
-              rules={[
-                { required: true, message: "Please input your username!" },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Color:"
-              name="colorLeft"
-              rules={[{ required: true, message: "Please select a color!" }]}
-            >
-              <CirclePicker
-                onChange={(color: { hex: string }) =>
-                  handleChangeColor(color, "left")
-                }
-              />
-            </Form.Item>
-          </div>
-          <div>
-            <p
-              style={{
-                textShadow: `2px 2px 0px ${colorHex.right}`,
-                fontSize: "4rem",
-              }}
-              className="grid-cell"
-            >
-              O
-            </p>
-            <Form.Item
-              label="Player name:"
-              name="nameRight"
-              rules={[
-                { required: true, message: "Please input your username!" },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Color:"
-              name="colorRight"
-              rules={[{ required: true, message: "Please select a color!" }]}
-            >
-              <CirclePicker
-                onChange={(color: { hex: string }) =>
-                  handleChangeColor(color, "right")
-                }
-              />
-            </Form.Item>
-          </div>
+          <PlayerFormInputs
+            side="Left"
+            colorHex={colorHex}
+            setColorHex={setColorHex}
+          />
+          <PlayerFormInputs
+            side="Right"
+            colorHex={colorHex}
+            setColorHex={setColorHex}
+          />
           <Button
             style={{ gridColumn: "1 / span 2" }}
             type="primary"

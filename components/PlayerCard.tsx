@@ -1,11 +1,9 @@
-import { CloseOutlined, TrophyOutlined } from "@ant-design/icons";
-import { Input, Card, Button } from "antd";
+import { TrophyOutlined } from "@ant-design/icons";
+import { Card } from "antd";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
-import { useEffect, useState } from "react";
 import { Player } from "../store/type";
-import anime from "animejs";
 
 type Props = {
   player: Player;

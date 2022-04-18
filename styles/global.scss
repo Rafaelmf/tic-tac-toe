@@ -11,6 +11,7 @@ html, body {
   height: 100%;
 }
 body {
+  font-family: monospace;
   padding: 5rem;
   justify-content: center;
   align-items: center;
@@ -31,12 +32,6 @@ body {
 .ant-btn-primary:hover {
   border-color: #7184bd;
   background: #7184bd;
-}
-
-
-
-.ant-card-bordered {
-  border: 1px solid $dracula-red !important;
 }
 
 
@@ -86,8 +81,8 @@ body {
 }
 
 #svgGroup {
-  stroke:$dracula-red;
-  stroke-width:1mm;
+  stroke: $dracula-dark-blue;
+  stroke-width: 0.4mm;
   fill: none;
 }
 
@@ -193,6 +188,15 @@ body {
   .game-grid {
     cursor: pointer;
     background: $dracula-background;
+    .card-grid {
+      width: 33%;
+      height: 10em;
+      text-align: center;
+      box-shadow: none;
+    }
+    .ant-card-bordered {
+      border: 1px solid $dracula-foreground;
+    }
   }
 
   .player-title {
@@ -204,7 +208,7 @@ body {
   
   .ant-card-head {
     color: $dracula-red;
-    border-bottom: 1px solid $dracula-red;
+    border-bottom: 1px solid $dracula-foreground !important;
     font-size: 28px;
     font-weight: 900;
   }
