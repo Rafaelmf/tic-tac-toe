@@ -1,7 +1,7 @@
 import { TrophyOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { RootState } from "../store/type";
 
 import { Player } from "../store/type";
 

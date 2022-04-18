@@ -1,6 +1,6 @@
 import { Card } from "antd";
 
-import { RootState } from "../store/store";
+import { RootState } from "../store/type";
 import { useSelector, useDispatch } from "react-redux";
 import { clickOnGrid } from "../store/actions";
 
