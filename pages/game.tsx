@@ -1,7 +1,7 @@
 import GameGrid from "../components/GameGrid";
 import PlayerCard from "../components/PlayerCard";
 import Header from "../components/Header";
-import { RootState } from "../store/store";
+import { RootState } from "../store/type";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";

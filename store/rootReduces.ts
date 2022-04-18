@@ -1,19 +1,10 @@
-import {
-  createAction,
-  createReducer,
-  AnyAction,
-  PayloadAction,
-  createAsyncThunk,
-} from "@reduxjs/toolkit";
-import useGameActions from "../hooks/useGameActions";
+import { createReducer } from "@reduxjs/toolkit";
 
 import {
-  changePlayerScore,
   clickOnGrid,
   registerPlayers,
   resetGame,
   playAnotherRound,
-  gameDraw,
 } from "./actions";
 import { Player, RootState } from "./type";
 
@@ -91,20 +82,18 @@ const INITIAL_STATE: RootState = {
       name: "",
       color: "",
       winner: false,
-      score: 0,
       symbol: "x",
       moves: [false, false, false, false, false],
-      wins: 0,
+      score: 0,
       currentMove: 0,
     },
     {
       name: "",
       color: "",
       winner: false,
-      score: 0,
       symbol: "o",
       moves: [false, false, false, false, false],
-      wins: 0,
+      score: 0,
       currentMove: 0,
     },
   ],
@@ -112,9 +101,6 @@ const INITIAL_STATE: RootState = {
 
 const rootReducer = createReducer(INITIAL_STATE, (builder) => {
   builder
-    .addCase(changePlayerScore, (state, action) => {
-      state[action.payload.player].score = action.payload.value;
-    })
     .addCase(clickOnGrid, (state, action) => {
       const { rowIdx, colIdx } = action.payload;
 
@@ -124,7 +110,7 @@ const rootReducer = createReducer(INITIAL_STATE, (builder) => {
 
       if (checkWinner(state.gameGrid, currentPlayer.symbol)) {
         currentPlayer.winner = true;
-        currentPlayer.wins++;
+        currentPlayer.score++;
         const opositeInitial = Math.abs(state.initialPlayerTurn - 1);
         state.initialPlayerTurn = opositeInitial;
         state.currPlayerTrun = opositeInitial;
@@ -148,15 +134,6 @@ const rootReducer = createReducer(INITIAL_STATE, (builder) => {
       state.players[1].color = action.payload.colorRight;
 
       state.currPlayerTrun = 0;
-    })
-    .addCase(gameDraw, (state, action) => {
-      state.players[0].moves = [false, false, false, false, false];
-      state.players[1].moves = [false, false, false, false, false];
-      state.gameGrid = [
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-      ];
     })
     .addCase(resetGame, (state, action) => {
       state.players = INITIAL_STATE.players;

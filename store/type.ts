@@ -14,7 +14,6 @@ export type Player = {
   symbol: string;
   moves: boolean[];
   currentMove: number;
-  wins: number;
 };
 
 export type FireWorkPoint = {
